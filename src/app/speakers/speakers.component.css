@@ -1,0 +1,36 @@
+.speakers{
+
+}
+
+	.speaker{
+		margin-bottom: 10px;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: flex-start;		
+	}
+
+		.left{
+			width: 90px;
+		}
+
+			.img{
+				height: 90px;
+				width: 90px;
+				border-radius: 50%;
+				border: 1px solid blue;
+			}
+
+		.right{
+			width: calc(100% - 110px);
+		}
+
+			.name{
+				display: inline-block;
+				margin-right: 6px;
+				font-weight: bold;
+			}
+
+			.position{
+				font-size: 0.7em;
+			}

@@ -1,0 +1,19 @@
+<div class="speaker">
+
+	<div 	class="img" 
+				[ngStyle]="{
+					'background-image': 'url(../assets/speakers_imgs/' + speaker?.photo + ')',
+					'background-position': 'center center',
+					'background-repeat': 'no-repeat',
+					'background-size': 'cover'
+				}"></div>
+
+	<div class="name fname">{{ speaker?.first_name_ru }}</div>
+	<div class="name jname">{{ speaker?.last_name_ru }}</div>
+	<div class="position">{{ speaker?.position_ru }}</div>
+
+	<div class="info" [innerHTML]="speaker?.info_ru"></div>
+
+	<button class="btn-common" [routerLink]="['/speakers']" [queryParams]="{ scroll_top: scrollTop }" mat-button>К списку спикеров</button>
+
+</div>

@@ -1,6 +1,9 @@
 <div class="nav">
-  <a [routerLink]="['/agenda']" routerLinkActive="active">agenda</a>
-  <a [routerLink]="['/speakers']" routerLinkActive="active">speakers</a>
+	<button class="btn btn-common" [routerLink]="['/agenda']" routerLinkActive="active" mat-button>Программа</button>
+	<button class="btn btn-common" [routerLink]="['/speakers']" routerLinkActive="active" mat-button>Спикеры</button>
 </div>
 
-<router-outlet></router-outlet>
+<div class="content" id="content">
+	<router-outlet></router-outlet>
+</div>
+

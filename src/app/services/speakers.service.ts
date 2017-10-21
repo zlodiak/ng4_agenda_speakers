@@ -13,6 +13,6 @@ export class SpeakersService {
   getSpeakers(): Observable<any> {
   	let result = this.http.get('../assets/json/speakers.json');
   	return result;
-  } 
+  };    
 
 }

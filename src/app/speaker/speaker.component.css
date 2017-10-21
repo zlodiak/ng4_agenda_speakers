@@ -1,0 +1,31 @@
+.speaker{
+	text-align: center;
+}
+
+	.img{
+		width: 140px;
+		height: 140px;
+		margin: 0 auto 20px;
+		border: 1px solid blue;
+		border-radius: 50%;
+	}
+
+	.name{
+		font-weight: bold;
+		display: inline-block;
+		margin: 0 3px;
+		padding-bottom: 10px;		
+	}
+
+	.position{
+		font-size: 0.7em;
+		padding-bottom: 10px;		
+	}	
+
+	.info{
+		text-align: left;
+	}
+
+	p{
+		margin-top: 0 !important;
+	}

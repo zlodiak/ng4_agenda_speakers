@@ -1,3 +1,20 @@
-<p>
-  speakers works!
-</p>
+<div class="speakers">
+	<mat-card class="speaker" *ngFor="let speaker of speakers" (click)="openDetails(speaker.guid)">
+		<div class="left">
+			<div 	class="img" 
+						[ngStyle]="{
+							'background-image': 'url(../assets/speakers_imgs/' + speaker.photo + ')',
+							'background-position': 'center center',
+							'background-repeat': 'no-repeat',
+							'background-size': 'cover'
+						}"></div>
+		</div>
+
+		<div class="right">
+			<div class="name fname">{{ speaker.first_name_ru }}</div>
+			<div class="name lname">{{ speaker.last_name_ru }}</div>
+			<div class="position">{{ speaker.position_ru }}</div>
+		</div>		
+	</mat-card>
+</div>
+

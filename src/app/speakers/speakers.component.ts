@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router, ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+
 import { SpeakersService } from '../services/speakers.service';
 import { Speaker } from '../speaker';
 
@@ -13,12 +16,38 @@ export class SpeakersComponent implements OnInit {
 
 	private speakersObj: any[] = [];
 	private speakers: Speaker[] = [];
+	private sub: any;
   
-  constructor(private speakersService: SpeakersService) {};
+  constructor(	private speakersService: SpeakersService, 
+  							private _sanitizer: DomSanitizer,
+  							private activatedRoute: ActivatedRoute,
+  							private router: Router) {};
 
 	ngOnInit() {
 		this.getSpeakers();
+		this.checkScroll();
 	};  
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }	
+
+  private checkScroll(): void {
+		this.sub = this.activatedRoute
+		  .queryParams
+		  .subscribe(params => {
+		    if(+params['scroll_top'] != 0) {
+		    	let content = document.getElementById('content');
+		    	content.scrollBy(+params['scroll_top'])
+		    }
+		  });  	
+  };
+
+  private openDetails(guid): void {
+  	let scrollTop = document.getElementById('content').scrollTop;
+  	console.log(guid, scrollTop);
+  	this.router.navigate(['/speaker', guid, scrollTop]);
+  };
 
   private getSpeakers(): void {
     this.speakersService
@@ -28,26 +57,24 @@ export class SpeakersComponent implements OnInit {
 				//console.log(response);                                                          
 
 				this.speakersObj = response.values;
-				//co/nsole.log(this.speakersObj);  
+				//console.log(this.speakersObj);  
 
         let this_ = this;
 				Object.keys(this.speakersObj).map(function(val, key) {
-					console.log(val, key);
-
-				  let newSpeker = new Speaker();
-					newSpeker.guid = val;
-					newSpeker.last_name_ru = this_.speakersObj[val].last_name_ru;
-					newSpeker.last_name_en = this_.speakersObj[val].last_name_en;
-					newSpeker.first_name_ru = this_.speakersObj[val].first_name_ru;
-					newSpeker.first_name_en = this_.speakersObj[val].first_name_en;
-					newSpeker.photo = this_.speakersObj[val].photo;									  	
-					newSpeker.position_ru = this_.speakersObj[val].position_ru;
-					newSpeker.position_en = this_.speakersObj[val].position_en;
-					newSpeker.info_ru = this_.speakersObj[val].info_ru;
-					newSpeker.info_en = this_.speakersObj[val].info_en;
-					newSpeker.order = +this_.speakersObj[val].order;
+				  let newSpeaker = new Speaker();
+					newSpeaker.guid = val;
+					newSpeaker.last_name_ru = this_.speakersObj[val].last_name_ru;
+					newSpeaker.last_name_en = this_.speakersObj[val].last_name_en;
+					newSpeaker.first_name_ru = this_.speakersObj[val].first_name_ru;
+					newSpeaker.first_name_en = this_.speakersObj[val].first_name_en;
+					newSpeaker.photo = this_.speakersObj[val].photo;									  	
+					newSpeaker.position_ru = this_.speakersObj[val].position_ru;
+					newSpeaker.position_en = this_.speakersObj[val].position_en;
+					newSpeaker.info_ru = this_.speakersObj[val].info_ru;
+					newSpeaker.info_en = this_.speakersObj[val].info_en;
+					newSpeaker.order = +this_.speakersObj[val].order;
 		  
-				  this_.speakers.push(newSpeker);				  
+				  this_.speakers.push(newSpeaker);				  
 				});  
 				console.log(this.speakers)                                                                     
       }, 

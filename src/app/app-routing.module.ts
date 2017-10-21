@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AgendaComponent } from './agenda/agenda.component';
 import { SpeakersComponent } from './speakers/speakers.component';
+import { SpeakerComponent } from './speaker/speaker.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -21,6 +22,11 @@ const routes: Routes = [
     children: [],
     component: SpeakersComponent
   }, 
+  {
+    path: 'speaker/:guid/:scroll_top',
+    children: [],
+    component: SpeakerComponent
+  },   
   {
   	path: '**', 
   	component: PageNotFoundComponent
