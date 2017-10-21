@@ -2,11 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import { SpeakersComponent } from './speakers/speakers.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AgendaComponent,
+    SpeakersComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

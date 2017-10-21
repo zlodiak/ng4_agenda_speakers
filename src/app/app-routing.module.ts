@@ -1,10 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AgendaComponent } from './agenda/agenda.component';
+import { SpeakersComponent } from './speakers/speakers.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 const routes: Routes = [
   {
     path: '',
-    children: []
+    redirectTo: '/speakers',
+    pathMatch: 'full'
+  },
+  {
+    path: 'agenda',
+    children: [],
+    component: AgendaComponent
+  }, 
+  {
+    path: 'speakers',
+    children: [],
+    component: SpeakersComponent
+  }, 
+  {
+  	path: '**', 
+  	component: PageNotFoundComponent
   }
 ];
 
@@ -13,3 +32,9 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+
+
+
+

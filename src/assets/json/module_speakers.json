@@ -1,0 +1,114 @@
+{
+    "order": ["last_name_ru", "last_name_en", "first_name_ru", "first_name_en", "position_ru", "position_en", "photo", "info_ru", "info_en", "order"],
+    "reference": "module_speakers",
+    "title": "спикеры",
+    "type": "files",
+    "headers": {
+        "last_name_ru": {
+            "title": "Фамилия (ru)",
+            "type": "text",
+            "mandatory": false
+        },
+        "last_name_en": {
+            "title": "Фамилия (en)",
+            "type": "text",
+            "mandatory": false
+        },
+        "first_name_ru": {
+            "title": "Имя (ru)",
+            "type": "text",
+            "mandatory": false
+        },
+        "first_name_en": {
+            "title": "Имя (en)",
+            "type": "text",
+            "mandatory": false
+        },
+        "position_ru": {
+            "title": "Должность (ru)",
+            "type": "text",
+            "mandatory": false
+        },
+        "position_en": {
+            "title": "Должность (en)",
+            "type": "text",
+            "mandatory": false
+        },
+        "photo": {
+            "title": "Фото",
+            "type": "file",
+            "mandatory": false
+        },
+        "info_ru": {
+            "title": "Биография (ru)",
+            "type": "html",
+            "mandatory": false
+        },
+        "info_en": {
+            "title": "Биография (en)",
+            "type": "html",
+            "mandatory": false
+        },
+        "order": {
+            "title": "Порядковый нормер",
+            "type": "text",
+            "mandatory": true
+        }
+    },
+    "relations": [{
+        "table_reference": "module_agenda",
+        "table_title": "программа",
+        "header_reference": "speaker_rows",
+        "header_title": "Спикеры (таблица)"
+    }],
+    "values": {
+        "bd7e7c96-bb9f-492b-add3-8f8ae2e8030f": {
+            "photo": "files/paragkh.jpg",
+            "last_name_ru": "Ханна  ",
+            "last_name_en": "Khanna",
+            "first_name_ru": "Параг",
+            "first_name_en": "Parag",
+            "position_ru": "Старший научный сотрудник Центра изучения Азии и глобализации Школы государственного управления им. Ли Куан Ю Национального университета Сингапура",
+            "position_en": "Senior Research Fellow in the Centre on Asia and Globalisation at the Lee Kuan Yew School of Public Policy at the National University of Singapore",
+            "info_ru": "<p>Параг Ханна - один из ведущих мировых специалистов по стратегии, путешественник и автор нескольких бестселлеров. Он старший научный сотрудник Центра изучения Азии и глобализации Школы государственного управления им. Ли Куан Ю Национального университета Сингапура. Также является управляющим партнером частной геостратегической консалтинговой компании Hybrid Reality и одним из основателей и генеральным директором ведущего маркетингового агентства Factotum.</p>\n<p>&nbsp;Новейшая книга Парага называется &laquo;Технократия в Америке:&nbsp;становление информационного государства&raquo; (2017 г.). Он также является автором трилогии о будущем глобальной цивилизации, в которую вошли книги &laquo;Второй мир: империи и влияние в новом миропорядке&raquo; (2008 г.), &laquo;Как управлять миром: путь к новому Ренессансу&raquo; (2011 г.) и &laquo;Коннектография: планирование будущего мировой цивилизации&raquo; (2016 г.). Он также выступил соавтором книги &laquo;Гибридная реальность: процветание в зарождающейся цивилизации гуманитарных технологий&raquo; (2012 г.). В 2008 г. журнал &laquo;Esquire&raquo; включил Парага в список 75 самых влиятельных людей XXI века, а журнал &laquo;Wired&raquo; - в так называемый &laquo;Smart List&raquo; - список людей, которые сыграют большую роль в своей отрасли в будущем.&nbsp;Параг получил степень бакалавра и магистра в Высшей школе дипломатической службы Джорджтаунского университета и докторскую степень в Лондонской школе экономики. Он посетил более 100 стран и входит в клуб молодых мировых лидеров Всемирного экономического форума.</p>\n<p>Парагу 41 год. Он родился в Индии, вырос в Нью-Йорке, а сейчас живет в Сингапуре. Дополнительная информация:&nbsp; http://www.paragkhanna.com/</p>",
+            "order": "10",
+            "info_en": "<p>Parag Khanna is a leading global strategist, world traveler, and best-selling author. He is a Senior Research Fellow in the Centre on Asia and Globalisation at the Lee Kuan Yew School of Public Policy at the National University of Singapore. He is also the Managing Partner of Hybrid Reality, a boutique geostrategic advisory firm, and Co-Founder &amp; CEO of Factotum, a leading content branding agency.'</p>\n<p>&nbsp;</p>\n<p>Parag's latest book is&nbsp;Technocracy in America:&nbsp;Rise of the Info-State&nbsp;(2017). He is author of a trilogy of books on the future of world order beginning with&nbsp;The Second World: Empires and Influence in the New Global Order&nbsp;(2008), followed by&nbsp;How to Run the World: Charting a Course to the Next Renaissance&nbsp;(2011), and concluding with&nbsp;Connectography: Mapping the Future of Global Civilization&nbsp;(2016). He is also co-author of&nbsp;Hybrid Reality: Thriving in the Emerging Human-Technology Civilization&nbsp;(2012). In 2008, Parag was named one of Esquire&rsquo;s &ldquo;75 Most Influential People of the 21st Century,&rdquo; and featured in WIRED magazine&rsquo;s &ldquo;Smart List.&rdquo;&nbsp;He holds a PhD from the London School of Economics, and Bachelors and Masters degrees from the School of Foreign Service at Georgetown University. He has traveled to more than 100 countries and is a Young Global Leader of the World Economic Forum.</p>\n<p>Parag is 41 years old. He was born in India, grew up in New York and resides in Singapore. Read more:&nbsp; http://www.paragkhanna.com/</p>"
+        },
+        "6ed0d614-1046-44f5-8c94-d3ab76a4e67d": {
+            "info_en": "<p>Evgeny Klimov works in Informzashita, Russia&rsquo;s leading company in information security solutions, where he is responsible for technology and development of new business segments. Prior to joining Informzaschita he held executive positions related to IT management and IT risks in major industrial and telecommunication companies: e.g., he was head of IT departments in CBOSS, Metalloinvest and Kazakhstan mobile operator Kcell. He also worked at various positions in PwC and KPMG Russia.</p>\n<p>Evgeny Klimov graduated from the Institute of Cryptography, Communications and Computer Science and has been working in IT since 2002.</p>",
+            "order": "20",
+            "last_name_ru": "Климов",
+            "last_name_en": "Klimov",
+            "photo": "files/klimov.jpg",
+            "first_name_ru": "Евгений",
+            "first_name_en": "Evgeny ",
+            "position_ru": "Директор по технологиям и развитию бизнеса, Информзащита",
+            "position_en": "Director of Technologies & Business Development, Infosec",
+            "info_ru": "<p>Евгений Климов работает в компании &ldquo;Информзащита&rdquo;, ведущей российской компании в области информационной безопасности, где он отвечает за технологический блок и развитие новых направлений бизнеса. До прихода в &laquo;Информзащиту&raquo; он занимал руководящие позиции, связанные с управлением ИТ и ИТ-рисками в крупнейших промышленных и телекоммуникационных компаниях. В частности он возглавлял ИТ-подразделения в компаниях CBOSS, &laquo;Металлоинвест&raquo;, в казахстанском сотовом операторе Kcell, а также занимал различные должности в структурах PwC и KPMG Russia.</p>\n<p>Евгений Климов окончил Институт криптографии, связи и информатики. В области информационных технологий работает с 2002 г.</p>"
+        },
+        "054e4068-25fa-43c9-aa4a-88edc483c49b": {
+            "order": "30",
+            "position_en": "Director of Technologies at Yandex",
+            "info_ru": "<p>Популяризатор программирования, успешный предприниматель и частый участник многих конференций, связанных с интернет-технологиями. Один из создателей и постоянный ведущий подкаста Радио-Т.</p>\n<p>Григорий Бакунов (также известный под ником Bobuk), энтузиаст программирования, всегда готовый поближе познакомиться с любой технологической новинкой, стоит у истоков ключевых разработок &laquo;Яндекса&raquo; с 2005 г.</p>\n<p>Закончив школу с отличием, Григорий отказался от права поступить без экзаменов в ведущий российский центр науки и образования Московский государственный университет и &ndash; к ужасу своих родителей &ndash; решил стать актером. Однако в конце 1990-х гг., разочаровавшись в актерской карьере, он нашел новое увлечение &ndash; в то время только зарождающиеся в России компьютерные технологии. Развиваясь в этой области, Григорий со временем занял должность Директора по распространению технологий &laquo;Яндекса&raquo;, где в данный момент отвечает за все экспериментальные инициативы исследования и разработки, которые могут стать основой для будущих проектов компании.</p>\n<p>Как евангелиста в сфере технологий, стартапов и интернет-проектов Григория часто приглашают выступить на отраслевых конференциях и мероприятиях, связанных с интернетом.</p>\n<p>Семья Григория &ndash; это гаджеты и мотоцикл. Он настолько увлечен своей работой, что у него редко доходят руки до бритья.</p>\n<p>Григорий &ndash; основатель и ведущий Радио-Т (radio-t.com), русскоязычного подкаста о высоких технологиях с еженедельной аудиторией в 500 тысяч человек.</p>",
+            "info_en": "<p>&nbsp;</p>\n<p>Coding evangelist, successful businessman and frequent participant of various Internet-related conferences. One of the founders and anchorman at podcast Radio-T.</p>\n<p>Grigory Bakunov (aka @bobuk), a coding fiend always keen to feel every new technology with his own hands, is someone who has been behind Yandex&rsquo;s core technologies since 2005.</p>\n<p>Having graduated from high school with distinction, he weaved his right to be accepted to Russia&rsquo;s leading education and research institution, the Moscow State University, without exams and, to the horror of his parents, became an acting student instead. After getting disappointed with his acting carrier by the end of the &lsquo;90s, Grigory found a new passion with the country&rsquo;s nascent computer technology industry. He took it in his stride and became Director of Technologies at Yandex, responsible for all experimental R&amp;D that may or may not be implemented in the company&rsquo;s future products.</p>\n<p>Grigory is a technology, startup and internet evangelist, who is highly in demand as a speaker at internet-related events and industry conferences.</p>\n<p>Grigory is married to his iGadgets and his motorbike. And rarely sees his beard trimmer.</p>\n<p>He is the founder and anchorman at Radio-T (radio-t.com), a Russian-language podcast for geeks with 500,000 weekly listeners.</p>",
+            "photo": "files/bakunov.jpg",
+            "last_name_ru": "Бакунов",
+            "last_name_en": "Bakunov  ",
+            "first_name_ru": "Григорий",
+            "first_name_en": "Grigory",
+            "position_ru": "Директор по распространению технологий компании «Яндекс»"
+        },
+        "d90a3728-c3c4-4fbb-a11f-2d68ffbfe828": {
+            "last_name_ru": "Гринберг ",
+            "last_name_en": "Grinberg",
+            "first_name_ru": "Руслан Семенович",
+            "first_name_en": "Ruslan Semenovich ",
+            "photo": "files/grinberg.jpg",
+            "position_ru": "Член-корреспондент РАН, директор Института экономики РАН  ",
+            "order": "40",
+            "position_en": "Leading Russian economist",
+            "info_ru": "<p>Руслан Семенович Гринберг &ndash; ведущий российский экономист, академик, является научным руководителем Института экономики РАН, профессором МГУ им. М.В. Ломоносова, профессором Школы-студии МХАТ им. Чехова и Панъевропейской высшей школы (Братислава).</p>\n<p>Руслан Семенович состоит в должности Президента Новой экономической ассоциации, является Вице-президентом Вольного экономического общества России, а также главным редактором журнала &laquo;Мир перемен&raquo;.</p>\n<p>Руслан Семенович окончил МГУ им. М.В. Ломоносова по специальности &laquo;Экономика зарубежных стран&raquo;, успешно получил ученую степень доктора экономических наук и звание профессора.</p>\n<p>Научные работы Руслана Семеновича выходят в России и в целом ряде зарубежных стран, в том числе в Великобритании, Польше, Австрии, США, за что он периодически награждается научными премиями, почетными дипломами и медалями за вклад в науку.</p>",
+            "info_en": "<p>Ruslan Semenovich Grinberg is a leading Russian economist, academician, scientific director of Institute of economics of Russian Academy of Sciences, professor at Lomonosov Moscow State University, at Chekhov Moscow Theater Art School and at Pan-European Higher School in Bratislava.</p>\n<p>Ruslan Semenovich is the President of New Economic Association,&nbsp;is the Vice-President of the Free Economic Society of Russia, and also is the Editor-in-Chief of the international socio-scientific journal &ldquo;World of Changes&rdquo;.</p>\n<p>Ruslan Semenovich graduated Lomonosov Moscow State University with degree in Foreign Economics, was awarded a PhD degree, became a professor.</p>\n<p>Scientific works of Ruslan Semenovich are published in Russia and in a number of foreign countries, including Great Britain, Poland, Austria, the USA, for which he is periodically awarded scientific prizes, diplomas and medals for his contribution to science.</p>"
+        }
+    }
+}
