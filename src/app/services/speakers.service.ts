@@ -11,7 +11,6 @@ export class SpeakersService {
   constructor(private http: Http) { };
 
   getSpeakers(): Observable<any> {
-  	console.log('ss');
   	let result = this.http.get('../assets/json/speakers.json');
   	return result;
   } 
