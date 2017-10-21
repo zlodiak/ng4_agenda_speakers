@@ -23,7 +23,7 @@ const routes: Routes = [
     component: SpeakersComponent
   }, 
   {
-    path: 'speaker/:guid/:scroll_top',
+    path: 'speaker/:guid',
     children: [],
     component: SpeakerComponent
   },   

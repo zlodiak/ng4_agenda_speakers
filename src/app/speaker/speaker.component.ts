@@ -16,15 +16,12 @@ export class SpeakerComponent implements OnInit {
 	private sub: any;
 	private speakersObj: any[] = [];
   private speaker: Speaker;  
-	private scrollTop: number;	
 
   constructor(private activatedRoute: ActivatedRoute, private speakersService: SpeakersService) { };
 
   ngOnInit() {
     this.sub = this.activatedRoute.params.subscribe(params => {
-    	//console.log(params['guid'], params['scroll_top']); 
       this.getSpeakerInfo(params['guid']);
-      this.scrollTop = params['scroll_top'];
     });  	
   }
 
@@ -44,7 +41,8 @@ export class SpeakerComponent implements OnInit {
 				this.speakersObj = response.values;
 				console.log(this.speakersObj);  
 
-				this.speaker = this.speakersObj[guid];
+        this.speaker = this.speakersObj[guid];
+				this.speaker['guid'] = guid;
 				console.log('---', typeof this.speaker, this.speaker);                                                                 
       }, 
       err => {

@@ -36,17 +36,19 @@ export class SpeakersComponent implements OnInit {
 		this.sub = this.activatedRoute
 		  .queryParams
 		  .subscribe(params => {
-		    if(+params['scroll_top'] != 0) {
-		    	let content = document.getElementById('content');
-		    	content.scrollBy(+params['scroll_top'])
+		    if(params['guid']) {
+		    	console.log(params['guid'], 'el_' + params['guid']);
+		    	setTimeout(function() {
+			    	let content = document.getElementById('el_' + params['guid']);
+			    	console.log(content);
+			    	content.scrollIntoView(true);
+		    	}, 1000);
 		    }
 		  });  	
   };
 
   private openDetails(guid): void {
-  	let scrollTop = document.getElementById('content').scrollTop;
-  	console.log(guid, scrollTop);
-  	this.router.navigate(['/speaker', guid, scrollTop]);
+  	this.router.navigate(['/speaker', guid]);
   };
 
   private getSpeakers(): void {
