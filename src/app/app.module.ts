@@ -4,9 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatTabsModule } from '@angular/material';
 import { OrderModule } from 'ngx-order-pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {  MatButtonModule, 
+          MatCardModule, 
+          MatTabsModule, 
+          MatSlideToggleModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AgendaComponent } from './agenda/agenda.component';
@@ -27,6 +30,7 @@ import { SpeakersPipe } from './pipes/speakers.pipe';
     SpeakersPipe
   ],
   imports: [
+    MatSlideToggleModule,
     FormsModule,
     OrderModule,
     MatTabsModule,

@@ -13,3 +13,19 @@ body{
 	padding: 0;
 	margin: 0;
 }
+
+.mat-slide-toggle-thumb{
+	background: url('./assets/icons/ru.png') center center no-repeat;
+	background-size: cover;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+	background: url('./assets/icons/en.png') center center no-repeat;
+	background-size: cover;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: rgba(0,0,0,.38);
+}
+.mat-slide-toggle-bar {
+    background-color: rgba(0,0,0,.38);
+}

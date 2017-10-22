@@ -1,6 +1,8 @@
 .nav{
 	height: 40px;
 	padding: 10px;
+	padding-right: 90px;
+	position: relative;
 }
 
 	.nav .btn{
@@ -10,6 +12,38 @@
 	.nav .btn.active{		
 		background: red;
 	}	
+
+	.toggler-lang-area:before{
+		position: absolute;
+		top: 7px;
+		left: 2px;
+		font-size: 1em;
+		content: 'ru';
+	}
+
+	.toggler-lang-area{
+		position: absolute;
+		top: 10px;
+		right: 0;
+		width: 80px;
+		height: 30px;
+		/*background: cyan;*/
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;	
+		overflow: hidden;	
+		padding-top: 6px;
+	}
+
+	.toggler-lang-area:after{
+		position: absolute;
+		top: 7px;
+		right: 2px;
+		font-size: 1em;
+		content: 'en';
+	}	
+
 
 .content{
 	height: calc(100vh - 60px);
