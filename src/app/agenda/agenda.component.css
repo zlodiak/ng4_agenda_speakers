@@ -5,7 +5,7 @@ mat-tab-group{
 
   .tab-inner{
     overflow: hidden;
-    padding: 10px;
+    padding: 10px 10px 50px;
   }
 
     .line{
@@ -36,4 +36,44 @@ mat-tab-group{
             font-weight: bold;
             padding-bottom: 6px;
           }
+
+          .speakers{
+
+          }
+
+            .card{
+              display: flex;
+              flex-wrap: nowrap;
+              justify-content: space-between;
+              align-items: flex-start; 
+              padding: 10px;             
+              margin-bottom: 10px;
+              overflow: hidden;
+              cursor: pointer;
+            }
+
+              .left_{
+                width: 40px;
+              }
+
+                .photo{
+                  width: 40px;
+                  height: 40px;
+                  border: 1px solid blue;
+                  border-radius: 50%;
+                }
+
+              .right_{
+                width: calc(100% - 50px);
+                min-height: 40px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: center;              
+              }
+
+                .name{
+                  font-weight: bold;
+                  margin-right: 6px;
+                }
 

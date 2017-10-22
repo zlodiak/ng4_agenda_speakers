@@ -9,5 +9,6 @@ export class Speaker {
   position_en: string;
   info_ru: string;
   info_en: string;
-  order: number;	
+  order: number;  
+  speaker_rows: string[];	
 }

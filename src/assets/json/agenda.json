@@ -12,7 +12,7 @@
         "date": {
             "title": "Дата",
             "type": "list",
-            "options": ["07.09.2017", "08.09.2017", "09.09.2017"],
+            "options": ["21.10.2017", "22.10.2017", "23.10.2017"],
             "mandatory": false
         },
         "time": {
@@ -154,7 +154,7 @@
             "title": "Доклад 1: «МЕСТО РОССИИ В МИРЕ БУДУЩЕГО»",
             "subtitle": "Вопросы-ответы",
             "speaker_array_en": [],
-            "speaker_rows": ["bd7e7c96-bb9f-492b-add3-8f8ae2e8030f"]
+            "speaker_rows": ["bd7e7c96-bb9f-492b-add3-8f8ae2e8030f", "054e4068-25fa-43c9-aa4a-88edc483c49b"]
         },
         "8623bb1b-20dc-467d-b2fa-81aa11614c1c": {
             "order": "40",

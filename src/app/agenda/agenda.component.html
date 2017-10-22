@@ -1,4 +1,4 @@
-<mat-tab-group>
+<mat-tab-group [selectedIndex]="selectedIndex">
   <mat-tab label="{{ date }}" *ngFor="let date of dates; let iDate = index">
     <div class="tab-inner">
       <div  class="line" 
@@ -7,13 +7,33 @@
         <div class="line-inner" >
           <div class="left">
             <div class="time" *ngIf="line.time">
-              {{ line.time.trim() }}
+              {{ line?.time.trim() }}
             </div>
           </div>
 
           <div class="right">
-            <div class="title" *ngIf="line.title">{{ line.title.trim() }}</div>
-            <div class="place" *ngIf="line.location">{{ line.location.trim() }}</div>            
+            <div class="title" *ngIf="line.title">{{ line?.title.trim() }}</div>
+            <div class="place" *ngIf="line.location">{{ line?.location.trim() }}</div>            
+            <div class="speakers" *ngIf="line.speaker_rows">
+              <mat-card class="card" 
+                        *ngFor="let speakerId of line.speaker_rows" 
+                        (click)="openSpeaker(speakerId)" 
+                        id="el_{{ speakerId }}">
+                <div class="left_">
+                  <div  class="photo" 
+                        [ngStyle]="{
+                          'background-image': 'url(../assets/speakers_imgs/' + speakersObj[speakerId]?.photo + ')',
+                          'background-position': 'center center',
+                          'background-repeat': 'no-repeat',
+                          'background-size': 'cover'
+                        }"></div>
+                </div>
+                <div class="right_">
+                  <div class="name">{{ speakersObj[speakerId]?.first_name_ru}}</div>
+                  <div class="name">{{ speakersObj[speakerId]?.last_name_ru}}</div>
+                </div>            
+              </mat-card>              
+            </div>            
           </div>        
         </div>
       </div>
