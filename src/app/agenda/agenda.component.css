@@ -1,0 +1,39 @@
+mat-tab-group{
+  height: 100vh;
+  overflow: hidden;
+}
+
+  .tab-inner{
+    overflow: hidden;
+    padding: 10px;
+  }
+
+    .line{
+      
+    }
+
+    .line.hidden{
+      display: none;
+    }
+
+      .line-inner{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;    
+        padding-bottom: 20px; 
+      }
+
+        .left{
+          width: 110px;
+        }
+
+        .right{
+          width: calc(100% - 120px);
+        }
+
+          .title{
+            font-weight: bold;
+            padding-bottom: 6px;
+          }
+

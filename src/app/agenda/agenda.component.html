@@ -1,3 +1,23 @@
-<p>
-  agenda works!
-</p>
+<mat-tab-group>
+  <mat-tab label="{{ date }}" *ngFor="let date of dates; let iDate = index">
+    <div class="tab-inner">
+      <div  class="line" 
+            *ngFor="let line of agenda | orderBy:'order':false ; let iLine = index" 
+            [hidden]="+line.date != +iDate || !line.title">
+        <div class="line-inner" >
+          <div class="left">
+            <div class="time" *ngIf="line.time">
+              {{ line.time.trim() }}
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="title" *ngIf="line.title">{{ line.title.trim() }}</div>
+            <div class="place" *ngIf="line.location">{{ line.location.trim() }}</div>            
+          </div>        
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
