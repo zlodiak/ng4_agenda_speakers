@@ -12,8 +12,8 @@
           </div>
 
           <div class="right">
-            <div class="title" *ngIf="line.title">{{ line?.title.trim() }}</div>
-            <div class="place" *ngIf="line.location">{{ line?.location.trim() }}</div>            
+            <div class="title" *ngIf="line.title">{{ isEnLang ? line?.title_en.trim() : line?.title.trim() }}</div>
+            <div class="place" *ngIf="line.location">{{ isEnLang ? line?.location_en.trim() : line?.location.trim() }}</div>            
             <div class="speakers" *ngIf="line.speaker_rows">
               <mat-card class="card" 
                         *ngFor="let speakerId of line.speaker_rows" 
@@ -29,8 +29,8 @@
                         }"></div>
                 </div>
                 <div class="right_">
-                  <div class="name">{{ speakersObj[speakerId]?.first_name_ru}}</div>
-                  <div class="name">{{ speakersObj[speakerId]?.last_name_ru}}</div>
+                  <div class="name">{{ isEnLang ? speakersObj[speakerId]?.first_name_en : speakersObj[speakerId]?.first_name_ru }}</div>
+                  <div class="name">{{ isEnLang ? speakersObj[speakerId]?.last_name_en : speakersObj[speakerId]?.last_name_ru }}</div>
                 </div>            
               </mat-card>              
             </div>            

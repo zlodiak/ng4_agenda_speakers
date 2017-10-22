@@ -23,11 +23,15 @@ export class AgendaComponent implements OnInit {
 	private speakers: Speaker[] = [];	
 
 	private selectedIndex: number = 0;
+	private isEnLang: boolean;
 
   constructor(private agendaService: AgendaService, 
   						private speakersService: SpeakersService, 
   						private activatedRoute: ActivatedRoute,
-  						private router: Router) { };
+  						private router: Router) { 
+  	this.isEnLang = localStorage.isEnLang ? true : false;
+  	console.log('this.isEnLang', this.isEnLang);
+  };
 
 	ngOnInit() {
 		this.getAgenda();
@@ -74,7 +78,7 @@ export class AgendaComponent implements OnInit {
 
 											this_.agenda.push(line);																			
 										});  
-										console.log(this.agenda)                                                                     
+										//console.log(this.agenda)                                                                     
 										this_.setTodayTab();	
                   }, 
                   err => {
@@ -90,7 +94,7 @@ export class AgendaComponent implements OnInit {
 				//console.log(response);                                                          
 
 				this.speakersObj = response.values;
-				console.log(this.speakersObj);  
+				//console.log(this.speakersObj);  
 
         let this_ = this;
 				Object.keys(this.speakersObj).map(function(val, key) {
@@ -109,7 +113,7 @@ export class AgendaComponent implements OnInit {
 		  
 				  this_.speakers.push(newSpeaker);				  
 				});  
-				console.log(this.speakers)                                                                     
+				//console.log(this.speakers)                                                                     
       }, 
       err => {
         console.log('err')         
