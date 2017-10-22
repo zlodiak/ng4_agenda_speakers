@@ -37,9 +37,9 @@ export class AgendaComponent implements OnInit {
   private setTodayTab(): void {
 		let date = new Date();
 		let todayStr = [('0'+date.getDate()).slice(-2), ('0'+(date.getMonth()+1)).slice(-2), date.getFullYear()].join('.');
-		console.log(todayStr);
+		//console.log(todayStr);
 		let selectedIndex = this.dates.indexOf(todayStr);
-		console.log('selectedIndex', selectedIndex); 	
+		//console.log('selectedIndex', selectedIndex); 	
 		this.selectedIndex = selectedIndex;
   };
 
@@ -51,7 +51,7 @@ export class AgendaComponent implements OnInit {
         						//console.log(response); 
 
         						this.dates = response['headers'].date.options;        					                                                         
-                    console.log(this.dates);                                                         
+                    //console.log(this.dates);                                                         
 
 										this.agendaObj = response.values;
 										//console.log(this.agendaObj);    

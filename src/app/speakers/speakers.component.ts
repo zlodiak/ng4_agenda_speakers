@@ -5,6 +5,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 
 import { SpeakersService } from '../services/speakers.service';
 import { Speaker } from '../speaker';
+import { SpeakersPipe } from '../pipes/speakers.pipe';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { Speaker } from '../speaker';
   styleUrls: ['./speakers.component.css']
 })
 export class SpeakersComponent implements OnInit {
+
+	private searchPhrase: string = '';
 
 	private speakersObj: any[] = [];
 	private speakers: Speaker[] = [];

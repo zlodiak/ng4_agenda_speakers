@@ -1,5 +1,9 @@
+<div class="search-area">
+<input class="search-field" placeholder="Введите фразу для поиска" [(ngModel)]="searchPhrase">
+</div>
+
 <div class="speakers" id="speakers">
-	<mat-card class="speaker" *ngFor="let speaker of speakers" (click)="openDetails(speaker.guid)" id="el_{{ speaker.guid }}">
+	<mat-card class="speaker" *ngFor="let speaker of speakers | speakers:searchPhrase:3" (click)="openDetails(speaker.guid)" id="el_{{ speaker.guid }}">
 		<div class="left">
 			<div 	class="img" 
 						[ngStyle]="{

@@ -1,6 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SpeakersService } from './services/speakers.service';
 import { AgendaService } from './services/agenda.service';
 import { SpeakerComponent } from './speaker/speaker.component';
+import { SpeakersPipe } from './pipes/speakers.pipe';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,11 @@ import { SpeakerComponent } from './speaker/speaker.component';
     AgendaComponent,
     SpeakersComponent,
     PageNotFoundComponent,
-    SpeakerComponent
+    SpeakerComponent,
+    SpeakersPipe
   ],
   imports: [
+    FormsModule,
     OrderModule,
     MatTabsModule,
     MatCardModule,

@@ -1,5 +1,16 @@
+.search-area{
+	width: 100%;
+	height: 20px;
+}
+
+	.search-field{
+		display: block;
+		width: calc(100% - 2px);
+		border: 1px solid #ccc;
+	}
+
 .speakers{
-	height: 100%;
+	height: calc(100% - 20px);
 	overflow: hidden;
 	overflow-y: auto;
 }
