@@ -39,9 +39,9 @@ export class SpeakersComponent implements OnInit {
 		    if(params['guid']) {
 		    	console.log(params['guid'], 'el_' + params['guid']);
 		    	setTimeout(function() {
-			    	let content = document.getElementById('el_' + params['guid']);
-			    	console.log(content);
-			    	content.scrollIntoView(true);
+			    	let speakers = document.getElementById('el_' + params['guid']);
+			    	console.log(speakers);
+			    	speakers.scrollIntoView(true);
 		    	}, 1000);
 		    }
 		  });  	

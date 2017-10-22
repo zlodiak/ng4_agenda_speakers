@@ -1,5 +1,7 @@
 .speakers{
-
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
 }
 
 	.speaker{
