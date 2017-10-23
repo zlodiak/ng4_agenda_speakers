@@ -6,6 +6,8 @@ import { AgendaService } from '../services/agenda.service';
 import { SpeakersService } from '../services/speakers.service';
 import { AgendaLine } from '../agenda-line';
 import { Speaker } from '../speaker';
+import { GlobalVarsService } from '../services/global-vars.service';
+
 
 
 @Component({
@@ -28,14 +30,13 @@ export class AgendaComponent implements OnInit {
   constructor(private agendaService: AgendaService, 
   						private speakersService: SpeakersService, 
   						private activatedRoute: ActivatedRoute,
-  						private router: Router) { 
-  	this.isEnLang = localStorage.isEnLang ? true : false;
-  	console.log('this.isEnLang', this.isEnLang);
-  };
+  						private router: Router,
+  						private globalVarsService: GlobalVarsService) {};
 
 	ngOnInit() {
 		this.getAgenda();
 		this.getSpeakers();
+		this.checkLang(); 		
 	}  
 
   private setTodayTab(): void {
@@ -122,6 +123,13 @@ export class AgendaComponent implements OnInit {
 
   private openSpeaker(guid): void {
   	this.router.navigate(['/speaker', guid]);
+  };  
+
+  private checkLang(): void {
+		this.globalVarsService.getLangState().subscribe(data => setTimeout(() => {
+		  console.log('subscribe', data);
+		  this.isEnLang = data;
+		}, 0));   	
   };      
 
 }

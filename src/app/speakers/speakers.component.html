@@ -1,9 +1,9 @@
 <div class="search-area">
-<input class="search-field" placeholder="Введите фразу для поиска" [(ngModel)]="searchPhrase">
+	<input class="search-field" placeholder="{{ isEnLang ? 'Search phrase' : 'Введите фразу для поиска' }}" [(ngModel)]="searchPhrase">
 </div>
 
 <div class="speakers" id="speakers">
-	<mat-card class="speaker" *ngFor="let speaker of speakers | speakers:searchPhrase:3" (click)="openDetails(speaker.guid)" id="el_{{ speaker.guid }}">
+	<mat-card class="speaker" *ngFor="let speaker of speakers | speakers:searchPhrase:3:isEnLang" (click)="openDetails(speaker.guid)" id="el_{{ speaker.guid }}">
 		<div class="left">
 			<div 	class="img" 
 						[ngStyle]="{
@@ -15,9 +15,9 @@
 		</div>
 
 		<div class="right">
-			<div class="name fname">{{ speaker.first_name_ru }}</div>
-			<div class="name lname">{{ speaker.last_name_ru }}</div>
-			<div class="position">{{ speaker.position_ru }}</div>
+			<div class="name fname">{{ isEnLang ? speaker.first_name_en : speaker.first_name_ru }}</div>
+			<div class="name lname">{{ isEnLang ? speaker.last_name_en : speaker.last_name_ru }}</div>
+			<div class="position">{{ isEnLang ? speaker.position_en : speaker.position_ru }}</div>
 		</div>		
 	</mat-card>
 </div>

@@ -6,6 +6,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 import { SpeakersService } from '../services/speakers.service';
 import { Speaker } from '../speaker';
 import { SpeakersPipe } from '../pipes/speakers.pipe';
+import { GlobalVarsService } from '../services/global-vars.service';
 
 
 @Component({
@@ -20,20 +21,31 @@ export class SpeakersComponent implements OnInit {
 	private speakersObj: any[] = [];
 	private speakers: Speaker[] = [];
 	private sub: any;
+
+	private isEnLang: boolean;
   
   constructor(	private speakersService: SpeakersService, 
   							private _sanitizer: DomSanitizer,
   							private activatedRoute: ActivatedRoute,
-  							private router: Router) {};
+  							private router: Router,
+  							private globalVarsService: GlobalVarsService) {};
 
 	ngOnInit() {
 		this.getSpeakers();
 		this.checkScroll();
+		this.checkLang();
 	};  
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }	
+
+  private checkLang(): void {
+		this.globalVarsService.getLangState().subscribe(data => setTimeout(() => {
+		  console.log('subscribe', data);
+		  this.isEnLang = data;
+		}, 0));   	
+  };
 
   private checkScroll(): void {
 		this.sub = this.activatedRoute

@@ -1,9 +1,14 @@
 <div class="nav">
-	<button class="btn btn-common" [routerLink]="['/agenda']" routerLinkActive="active" mat-button>Программа</button>
-	<button class="btn btn-common" [routerLink]="['/speakers']" routerLinkActive="active" mat-button>Спикеры</button>
+	<button class="btn btn-common" [routerLink]="['/agenda']" routerLinkActive="active" mat-button>
+		{{ isEnLang ? 'Agenda' : 'Программа' }}
+	</button>
+
+	<button class="btn btn-common" [routerLink]="['/speakers']" routerLinkActive="active" mat-button>
+		{{ isEnLang ? 'Speakers' : 'Спикеры' }}
+	</button>
 
 	<div class="toggler-lang-area">
-		<mat-slide-toggle class="toggler-lang" (click)="toggleLang()"></mat-slide-toggle>	
+		<mat-slide-toggle class="toggler-lang" (click)="toggleLang()" [(ngModel)]="isEnLang"></mat-slide-toggle>	
 	</div>
 </div>
 

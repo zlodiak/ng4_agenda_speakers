@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GlobalVarsService } from './services/global-vars.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,20 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-	private lang: boolean = false;
+	private isEnLang: boolean;
+
+	constructor(private globalVarsService: GlobalVarsService) {};
 
 	ngOnInit() {
-		localStorage.removeItem('isEnLang');
+		this.checkLang();
 	};
   
 	private toggleLang() {
-		this.lang = !this.lang;
-
-		if(this.lang == true) {
-			localStorage.isEnLang = 'true';
-		} else {
-			localStorage.removeItem('isEnLang');
-		}
+		this.isEnLang = !this.isEnLang;
+		this.globalVarsService.setLangState(this.isEnLang);
 	};
+
+  private checkLang(): void {
+    this.globalVarsService.getLangState().subscribe(data => setTimeout(() => {
+      console.log('subscribe', data);
+      this.isEnLang = data;
+    }, 0));     
+  }; 
 
 }

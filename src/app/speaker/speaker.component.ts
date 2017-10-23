@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { SpeakersService } from '../services/speakers.service';
 import { Speaker } from '../speaker';
+import { GlobalVarsService } from '../services/global-vars.service';
 
 
 @Component({
@@ -17,12 +18,15 @@ export class SpeakerComponent implements OnInit {
 	private speakersObj: any[] = [];
   private speaker: Speaker;  
 
-  constructor(private activatedRoute: ActivatedRoute, private speakersService: SpeakersService) { };
+  private isEnLang: boolean;
+
+  constructor(private activatedRoute: ActivatedRoute, 
+              private speakersService: SpeakersService,
+              private globalVarsService: GlobalVarsService) { };
 
   ngOnInit() {
-    this.sub = this.activatedRoute.params.subscribe(params => {
-      this.getSpeakerInfo(params['guid']);
-    });  	
+    this.checkLang();
+    this.checkRouteParams();
   }
 
 	ngOnDestroy() {
@@ -48,6 +52,19 @@ export class SpeakerComponent implements OnInit {
       err => {
         console.log('err')         
       });  	
-  };	
+  };
+
+  private checkRouteParams(): void {
+    this.sub = this.activatedRoute.params.subscribe(params => {
+      this.getSpeakerInfo(params['guid']);
+    });      
+  };
+
+  private checkLang(): void {
+    this.globalVarsService.getLangState().subscribe(data => setTimeout(() => {
+      console.log('subscribe', data);
+      this.isEnLang = data;
+    }, 0));     
+  }; 
 
 }

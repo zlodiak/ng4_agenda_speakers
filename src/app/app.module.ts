@@ -19,6 +19,7 @@ import { SpeakersService } from './services/speakers.service';
 import { AgendaService } from './services/agenda.service';
 import { SpeakerComponent } from './speaker/speaker.component';
 import { SpeakersPipe } from './pipes/speakers.pipe';
+import { GlobalVarsService } from './services/global-vars.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { SpeakersPipe } from './pipes/speakers.pipe';
     AppRoutingModule
   ],
   providers: [
+    GlobalVarsService,
     SpeakersService, 
     AgendaService
   ],
